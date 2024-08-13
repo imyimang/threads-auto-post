@@ -1,5 +1,5 @@
 # Threads Auto Blocker
-一個能夠透過Google Gemini API自動產生文章並且發送到Threads的專案
+一個能夠透過 Google Gemini API 自動產生文章並且發送到 Threads 的專案
 
 # 說明
 本專案使用了 `metathreads` 和 `google-generativeai` 兩個套件
