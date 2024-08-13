@@ -1,4 +1,4 @@
-# Threads Auto Blocker
+# Threads Auto Post
 一個能夠透過 Google Gemini API 自動產生文章並且發送到 Threads 的專案
 
 # 說明
