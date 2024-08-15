@@ -2,5 +2,6 @@
     "ACCOUNT":"",
     "PASSWORD":"",
     "API_KEY":"",
-    "NEWS":"https://www.setn.com/ViewAll.aspx"
+    "NEWS":"https://www.setn.com/ViewAll.aspx",
+    "MODE":"text"
 }

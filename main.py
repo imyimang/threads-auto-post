@@ -11,14 +11,20 @@ ACCOUNT = data["ACCOUNT"]
 PASSWORD = data["PASSWORD"]
 API_KEY = data["API_KEY"]
 NEWS = data["NEWS"]
+MODE = data["MODE"]
 
 
 #  Prompt填這裡
 ##########################
 prompt = """
-
+嗨
 """
 ##########################
+
+while True:
+    if MODE in ['setn', 'text']: break
+
+    MODE = input('不明的模式，模式應為 "setn" 或 "text"\n輸入執行模式: ')
 
 print("正在登入...")
 threads = MetaThreads()
@@ -70,7 +76,6 @@ async def text_api(msg: str) -> str | None:
 
 async def text_auto_post():
     while True:
-
         reply_text = await text_api(prompt)
         print("\n生成結果:" + reply_text)
 
@@ -110,5 +115,5 @@ async def setn_auto_post(url):
         
         await asyncio.sleep(60 + random.randint(10,60))
 
-
-asyncio.run(text_auto_post(NEWS))
+if MODE == "setn": asyncio.run(setn_auto_post(NEWS))
+if MODE == "text": asyncio.run(text_auto_post())
