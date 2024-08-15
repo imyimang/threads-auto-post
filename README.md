@@ -18,7 +18,7 @@
     - 預設是爬取總覽版，可以至網站選擇自己要爬的板並更改 `config.json` 中的網址
 
 > [!WARNING]  
-> 使用本專案有**極高的機率**被 Instagram 判定為自動化程式，請自行斟酌
+> 本專案可能違反了 Instagram 的使用條款，請自行斟酌
 
 # 前置作業
 將 Threads(Instagram)的帳號密碼 和 Gemini API key 放入 `config.json`
