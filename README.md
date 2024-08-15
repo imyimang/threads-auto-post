@@ -34,5 +34,7 @@ pip install -U -r requirements.txt
 # FAQ
 - ### [如何獲取Gemini API key](https://github.com/imyimang/discord-gemini-chat-bot/blob/main/docs/zh/q2.md)
 
+- ### [帳號登入失敗?](docs/q1.md)
+
 # 參考資料
 - ### [iSarabjitDhiman/MetaThreads](https://github.com/iSarabjitDhiman/MetaThreads)
