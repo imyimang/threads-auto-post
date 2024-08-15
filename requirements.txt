@@ -1,3 +1,4 @@
 google-generativeai
 metathreads
 beautifulsoup4
+aiohttp
