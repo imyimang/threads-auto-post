@@ -4,6 +4,7 @@ from metathreads import MetaThreads
 from spider import getnews,setn_fetch_url
 import random
 import json
+import re
 
 data = json.load(open("config.json", encoding="utf-8")) 
 
@@ -114,6 +115,41 @@ async def setn_auto_post(url):
             print("成功發送文章!")    
         
         await asyncio.sleep(60 + random.randint(10,60))
+        
+async def manual():
+    url = input("輸入新聞網址/主題:")
+    pattern = r'https://[^\s]+'
+    if re.match(pattern,url):
+        news = await getnews(url)
+        print("\n新聞內容:",news)
+        reply_text = await text_api(prompt + " ".join(news))
+        print("\n生成結果:" + reply_text)
+    else:
+        reply_text = await text_api(prompt + url)
+        print("\n生成結果:" + reply_text)
+
+    yes_or_no = input("\n你要發這篇文嗎: ")
+    if yes_or_no == "yes" or yes_or_no == "y":
+        if re.match(pattern,url):
+            yes_or_no = input("要附連結嗎:")
+            if yes_or_no == "yes" or yes_or_no == "y":
+                print("正在發送貼文")
+                threads.post_thread(thread_caption=f"{reply_text}\n\n{url}")
+                print("成功發送文章!")
+            else:
+                print("正在發送貼文")
+                threads.post_thread(thread_caption=f"{reply_text}")
+                print("成功發送文章!")     
+        else:
+            print("正在發送貼文")
+            threads.post_thread(thread_caption=f"{reply_text}")
+            print("成功發送文章!")     
+
+        await manual()
+    else:
+        await manual()
+
 
 if MODE == "setn": asyncio.run(setn_auto_post(NEWS))
 if MODE == "text": asyncio.run(text_auto_post())
+if MODE == "manual": asyncio.run(manual())
