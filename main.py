@@ -23,7 +23,7 @@ prompt = """
 ##########################
 
 while True:
-    if MODE in ['setn', 'text']: break
+    if MODE in ['setn', 'text', 'manual']: break
 
     MODE = input('不明的模式，模式應為 "setn" 或 "text"\n輸入執行模式: ')
 
